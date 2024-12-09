@@ -27,6 +27,9 @@ const App = () => {
           <User key={user.id} {...user} />
         ))}
       </ul>
+      <Message />
+      <WelcomeSection />
+      <Footer />
     </>
   );
 };
