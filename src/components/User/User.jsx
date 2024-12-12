@@ -1,4 +1,5 @@
 import clsx from "clsx";
+import { WiAlien } from "react-icons/wi";
 import styles from "../User/User.module.css";
 const User = ({
   name,
@@ -8,7 +9,9 @@ const User = ({
 }) => {
   return (
     <div className={styles.card}>
-      <h3 className={styles.title}>{name}</h3>
+      <h3 className={styles.title}>
+        {name} <WiAlien className={styles.iconUser } />
+      </h3>
       <p>{email}</p>
       <p>{bio}</p>
       <p
