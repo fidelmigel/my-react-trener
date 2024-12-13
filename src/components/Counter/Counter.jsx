@@ -1,26 +1,40 @@
+import { useState } from "react";
 import s from "./Counter.module.css";
 
 export const Counter = () => {
-  const handleClickPlus = (e) => {
-    console.log("Plus click");
-    console.log(e);
-    e.target.innerHTML = "Зміна назви кнопки";
+  const [counter, setCounter] = useState(1); // Стан для лічильника
+  const [step, setStep] = useState(1); // Стан для кроку
+
+  const handleClickPlus = () => {
+    setCounter((prevState) => prevState + step);
   };
-  const handleReset = (name) => {
-    console.log(`Hallo ${name}`);
+
+  const handleClickMinus = () => {
+    setCounter((prevState) => prevState - step);
   };
+
+  const handleReset = () => {
+    setCounter(0);
+    setStep(1);
+  };
+
   return (
     <div className={s.flexContainer}>
       <div className={s.wrapper}>
-        <h1>{1}</h1>
+        <h1>{counter}</h1>
+        <input
+          type="number"
+          value={step}
+          onChange={(e) => setStep(Number(e.target.value) || 1)} // Перетворення на число
+        />
         <div className={s.flex}>
-          <button onClick={() => console.log("Hello")} className="btn">
+          <button onClick={handleClickMinus} className="btn">
             minus
           </button>
-          <button onClick={() => handleReset("Tom")} className="btn">
+          <button onClick={handleReset} className="btn">
             reset
           </button>
-          <button onClick={(e) => handleClickPlus(e)} className="btn">
+          <button onClick={handleClickPlus} className="btn">
             plus
           </button>
         </div>
