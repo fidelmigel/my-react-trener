@@ -1,9 +1,30 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import s from "./Counter.module.css";
 
 export const Counter = () => {
   const [counter, setCounter] = useState(1); // Стан для лічильника
   const [step, setStep] = useState(1); // Стан для кроку
+
+  // ця функція виконаєтся лише один раз
+  useEffect(() => {
+    console.log("компонент зявився в DOM");
+  }, []);
+
+  //useEffect(() => {
+  //  console.log("змінився лічильник:", counter);
+  //  }, [counter]);
+
+  useEffect(() => {
+    console.log("змінився лічильник:", counter);
+    if (counter === 10) {
+      console.log("лічільник = 10, скидаю до 0");
+      setCounter(0);
+    }
+  }, [counter]);
+
+  useEffect(() => {
+    console.log("змінився крок для лічильника", step);
+  }, [step]);
 
   const handleClickPlus = () => {
     setCounter((prevState) => prevState + step);
