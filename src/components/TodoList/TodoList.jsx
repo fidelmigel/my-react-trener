@@ -1,11 +1,26 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import todosData from "./../../data/todos.json";
 import { TodoItem } from "../TodoList/TodoItem";
 import s from "../TodoList/TodoList.module.css";
 
 export const TodoList = () => {
-  const [todos, setTodos] = useState(todosData);
+  // const [todos, setTodos] = useState(() => {
+  //  const savedData = JSON.parse(localStorage.getItem("todos"));
+  //  if (savedData?.length) {
+  //  return savedData;
+  //  }
+  // return [];
+  // });
+  // АБО
+  const [todos, setTodos] = useState(
+    () => JSON.parse(localStorage.getItem("todos")) ?? []
+  );
+
   const [newValue, setNewValue] = useState("");
+
+  useEffect(() => {
+    localStorage.setItem("todos", JSON.stringify(todos));
+  }, [todos]);
 
   const deleteTodo = (id) => {
     console.log(id);

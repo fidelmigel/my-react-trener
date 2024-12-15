@@ -3,6 +3,7 @@ import { ColorPicker } from "../components/ColorPicker/ColorPicker";
 import { Counter } from "../components/Counter/Counter";
 import { TodoList } from "../components/TodoList/TodoList";
 import Modal from "../components/Modal/Modal";
+import Vote from "../components/Vote/Vote";
 
 const App = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -10,6 +11,7 @@ const App = () => {
   const closeModal = () => setIsOpen(false);
   return (
     <div>
+      <Vote />
       <Counter />
       <ColorPicker />
       <TodoList />
