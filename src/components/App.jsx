@@ -4,6 +4,7 @@ import { Counter } from "../components/Counter/Counter";
 import { TodoList } from "../components/TodoList/TodoList";
 import Modal from "../components/Modal/Modal";
 import Vote from "../components/Vote/Vote";
+import Form from "../components/Form/Form";
 
 const App = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -24,6 +25,9 @@ const App = () => {
           itaque corrupti?
         </Modal>
       )}
+
+      <h1>Form</h1>
+      <Form />
     </div>
   );
 };
