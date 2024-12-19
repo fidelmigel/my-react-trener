@@ -5,6 +5,7 @@ import { TodoList } from "../components/TodoList/TodoList";
 import Modal from "../components/Modal/Modal";
 import Vote from "../components/Vote/Vote";
 import Form from "../components/Form/Form";
+import ControlledForm from "../components/Form/ControlledForm";
 
 const App = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -28,6 +29,8 @@ const App = () => {
 
       <h1>Form</h1>
       <Form />
+      <h1>ControlledForm </h1>
+      <ControlledForm />
     </div>
   );
 };
