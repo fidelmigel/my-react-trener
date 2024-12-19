@@ -1,14 +1,13 @@
 import { useState } from "react";
 import s from "./Form.module.css";
 
+const INITIAL_STATE = { username: "", email: "", password: "" };
 const ControlledForm = () => {
-  const [formData, setFormData] = useState({
-    username: "",
-    email: "",
-    password: "",
-  });
+  const [formData, setFormData] = useState(INITIAL_STATE);
   const handleSubmit = (e) => {
     e.preventDefault();
+    console.log(formData);
+    setFormData(INITIAL_STATE);
   };
 
   // поганий підхід , багато однотипного коду
@@ -60,6 +59,7 @@ const ControlledForm = () => {
             className={s.input}
             type="text"
             name="username"
+            value={formData.username}
             onChange={handleChangeInput}
           />
         </label>
@@ -69,6 +69,7 @@ const ControlledForm = () => {
             className={s.input}
             type="text"
             name="email"
+            value={formData.email}
             onChange={handleChangeInput}
           />
         </label>
@@ -78,6 +79,7 @@ const ControlledForm = () => {
             className={s.input}
             type="password"
             name="password"
+            value={formData.password}
             onChange={handleChangeInput}
           />
         </label>
