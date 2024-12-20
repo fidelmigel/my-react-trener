@@ -4,8 +4,9 @@ import { Counter } from "../components/Counter/Counter";
 import { TodoList } from "../components/TodoList/TodoList";
 import Modal from "../components/Modal/Modal";
 import Vote from "../components/Vote/Vote";
-import Form from "../components/Form/Form";
+import FormRegister from "../components/Form/Form";
 import ControlledForm from "../components/Form/ControlledForm";
+import FullForm from "../components/Form/FullForm";
 
 const App = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -27,10 +28,12 @@ const App = () => {
         </Modal>
       )}
 
-      <h1>Form</h1>
-      <Form />
+      <h1>🤖FORMIK🤖</h1>
+      <FormRegister />
       <h1>ControlledForm </h1>
       <ControlledForm />
+      <h1>FullForm </h1>
+      <FullForm />
     </div>
   );
 };
