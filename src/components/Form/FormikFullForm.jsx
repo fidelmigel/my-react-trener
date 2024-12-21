@@ -9,7 +9,7 @@ const INITIAL_STATE = {
   details: "",
   isTermsAccepted: false,
 };
-const FullForm = () => {
+const FormikFullForm = () => {
   const [formData, setFormData] = useState(INITIAL_STATE);
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -125,4 +125,4 @@ const FullForm = () => {
   );
 };
 
-export default FullForm;
+export default FormikFullForm;
