@@ -7,6 +7,7 @@ import Vote from "../components/Vote/Vote";
 import FormRegister from "../components/Form/Form";
 import ControlledForm from "../components/Form/ControlledForm";
 import FullForm from "../components/Form/FullForm";
+import FormikFullForm from "../components/Form/FormikFullForm";
 
 const App = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -34,6 +35,8 @@ const App = () => {
       <ControlledForm />
       <h1>FullForm </h1>
       <FullForm />
+      <h1>🛸🛸🛸🛸FormikFullForm </h1>
+      <FormikFullForm />
     </div>
   );
 };
